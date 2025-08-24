@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识图谱</title>
+
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="../static/images/logo.jpg">
+    <!--Nifty Stylesheet [ REQUIRED ]-->
+    <link href="../static/css/nifty.min.css" rel="stylesheet">
+
+
+    <!--Nifty Premium Icon [ DEMONSTRATION ]-->
+    <link href="../static/css/nifty-demo-icons.min.css" rel="stylesheet">
+
+
+    <!--Demo [ DEMONSTRATION ]-->
+    <link href="../static/css/nifty-demo-icons.min.css" rel="stylesheet">
+    <link href="../static/css/nifty-demo.min.css" rel="stylesheet">
+    <link href="../static/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="dns-prefetch" href="https://webapi.amap.com">
+    <link rel="dns-prefetch" href="https://restapi.amap.com">
+    <link rel="dns-prefetch" href="https://vdata.amap.com">
+    <link rel="dns-prefetch" href="https://vdata01.amap.com">
+    <link rel="dns-prefetch" href="https://vdata02.amap.com">
+    <link rel="dns-prefetch" href="https://vdata03.amap.com">
+    <link rel="dns-prefetch" href="https://vdata04.amap.com">
+    <link rel="dns-prefetch" href="https://sdf.amap.com">
+    <link rel="dns-prefetch" href="https://wprd01.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://wprd02.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://wprd03.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://wprd04.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://webst01.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://webst02.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://webst03.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://webst04.is.autonavi.com">
+
+    <!--JAVASCRIPT-->
+    <!--=================================================-->
+
+    <!--Pace - Page Load Progress Par [OPTIONAL]-->
+    <link href="../static/css/pace.min.css" rel="stylesheet">
+
+    <script src="../static/js/pace.min.js"></script>
+
+
+    <!--jQuery [ REQUIRED ]-->
+    <script src="../static/js/jquery-2.2.4.min.js"></script>
+
+
+    <!--BootstrapJS [ RECOMMENDED ]-->
+    <script src="../static/js/bootstrap.min.js"></script>
+
+
+    <!--NiftyJS [ RECOMMENDED ]-->
+    <script src="../static/js/nifty.min.js"></script>
+    <script src="../static/js/icons.js"></script>
+    <!-- 引入最新版的 echarts CDN -->
+    <script type="text/javascript" src="../static/js/echarts4.min.js"></script>
+    <!-- 引入最新版的 echarts-extension-amap 高德地图扩展库 CDN -->
+    <script src="../static/js/nifty-demo.min.js"></script>
+    <style type="text/css">
+        #tagsList {
+            position: relative;
+            width: 250px;
+            height: 250px;
+        }
+
+        #tagsList a {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-family: Microsoft YaHei;
+            color: gray;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 3px 6px;
+        }
+
+        #tagsList a:hover {
+            color: #249e92;
+            letter-spacing: 2px;
+        }
+
+        #search:focus {
+            border: 1px solid #249e92;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div id="container" class="effect aside-float aside-bright mainnav-lg">
+    <header id="navbar">
+        <div id="navbar-container" class="boxed">
+
+            <div class="navbar-header">
+                <a href="" class="navbar-brand">
+                    <img src="../static/images/logo.jpg" alt="Nifty Logo" class="brand-icon">
+                    <div class="brand-title">
+                        <span class="brand-text"></span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="navbar-content clearfix">
+                <ul class="nav navbar-top-links pull-left">
+                    <li class="tgl-menu-btn">
+                        <a class="mainnav-toggle" href="#">
+                            <i class="demo-pli-view-list"></i>
+                        </a>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-top-links pull-left">
+
+                    <h4>知识图谱</h4>
+
+
+                </ul>
+            </div>
+
+        </div>
+    </header>
+    <div class="boxed">
+        <div id="content-container">
+            <div id="page-content">
+                <h4 class="text-main pad-btm bord-btm">地图可视化</h4>
+                <div id="" style="width: 100%;height: 800px">
+                    <div class="container mt-5">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div id="chart1" style="width: 90%; height: 300px;"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="chart2" style="width: 90%; height: 300px;"></div>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-md-6">
+                            <div id="chart3" style="width: 90%; height: 300px;"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="chart4" style="width: 90%; height: 300px;"></div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <!--===================================================-->
+            <!--End page content-->
+
+
+        </div>
+        <!--===================================================-->
+        <!--END CONTENT CONTAINER-->
+
+
+        <!--MAIN NAVIGATION-->
+        <!--===================================================-->
+        <nav id="mainnav-container">
+            <div id="mainnav">
+
+                <!--Menu-->
+                <!--================================-->
+                <div id="mainnav-menu-wrap">
+                    <div class="nano">
+                        <div class="nano-content">
+
+                            <ul id="mainnav-menu" class="list-group">
+
+                                <li>
+                                    <a href="search">
+                                        <i class="fa fa-search" style="width:24px"></i>
+                                        <span class="menu-title">
+                                                <strong>检索</strong>
+                                            </span>
+
+                                    </a>
+
+
+                                </li>
+                                <li>
+                                    <a href="get_all_relation">
+                                        <i class="fa fa-pie-chart" style="width:24px"></i>
+                                        <span class="menu-title">
+                                                <strong>知识图谱</strong>
+                                            </span>
+
+                                    </a>
+
+                                </li>
+                                <!--Menu list item-->
+                                <li>
+                                    <a href="maps">
+                                        <i class="fa fa-question-circle" style="width:24px"></i>
+                                        <span class="menu-title">地图</span>
+
+                                    </a>
+                                    <a href="plot_scores">
+                                        <i class="fa fa-question-circle" style="width:24px"></i>
+                                        <span class="menu-title">统计</span>
+
+                                    </a>
+
+                                </li>
+
+
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!--================================-->
+                <!--End menu-->
+
+            </div>
+        </nav>
+        <!--===================================================-->
+        <!--END MAIN NAVIGATION-->
+
+    </div>
+
+    <!-- FOOTER -->
+    <!--===================================================-->
+    <footer id="footer">
+
+        <p class="pad-lft">Copyright&#0169; 2022 &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;All Rights Reserved </p>
+
+    </footer>
+    <!--===================================================-->
+    <!-- END FOOTER -->
+
+    <!-- SCROLL PAGE BUTTON -->
+    <!--===================================================-->
+    <button class="scroll-top btn">
+        <i class="pci-chevron chevron-up"></i>
+    </button>
+    <!--===================================================-->
+</div>
+<!--===================================================-->
+<!-- END OF CONTAINER -->
+<script src="../static/js/echarts-wordcloud.js"></script>
+<script type="text/javascript">
+    function drawCharts() {
+        data1 =
+        {{ data1 | safe }}
+        // Process data for each chart
+
+        // Chart 1: Example bar chart
+        var chart1 = echarts.init(document.getElementById('chart1'));
+        var names = [];
+        var scores = [];
+        for (var i = 0; i < data1.length; i++) {
+            names.push(data1[i].name);
+            scores.push(data1[i].score);
+        }
+        var option1 = {
+            title: {
+                text: '太湖流域历史名地分布图'
+            },
+            xAxis: {
+                type: 'category',
+                data: names
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [{
+                data: scores,
+                type: 'bar'
+            }]
+        };
+        chart1.setOption(option1);
+
+        // Chart 2: Example line chart
+        data2 =
+        {{ data2 | safe }}
+        var chart2 = echarts.init(document.getElementById('chart2'));
+        var option2 = {
+            title: {
+                text: '建立朝代词云图'
+            },
+            series: [{
+                type: 'wordCloud',
+                // 数据
+                data: data2
+            }]
+        };
+        chart2.setOption(option2);
+
+        // Chart 3: Example pie chart
+        var names3 = [];
+        var scores3 = [];
+        data3 =
+        {{ data3 | safe}}
+        for (var i = 0; i < data3.length; i++) {
+            names3.push(data3[i].name);
+            scores3.push(data3[i].score);
+        }
+        var chart3 = echarts.init(document.getElementById('chart3'));
+        var option3 = {
+            title: {
+                text: '不同文化对比'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: '{a} <br/>{b}: {c} ({d}%)'
+            },
+            series: [{
+                name: 'Score',
+                type: 'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    label: {
+                        show: true,
+                        fontSize: '30',
+                        fontWeight: 'bold'
+                    }
+                },
+                labelLine: {
+                    show: false
+                },
+                data: data3.map(function (item) {
+                    return {value: item.score, name: item.name};
+                })
+            }]
+        };
+        chart3.setOption(option3);
+
+        // Chart 4: Another example chart (customize as needed)
+        data4 =
+        {{ data4 | safe}}
+        var chart4 = echarts.init(document.getElementById('chart4'));
+        var option4 = {
+            title: {
+                text: '历史名地分布'
+            },
+            tooltip: {
+                position: 'top'
+            },
+            grid: {
+                height: '50%',
+                top: '10%'
+            },
+            xAxis: {
+                type: 'category',
+                data: {{ x1|safe }},
+                splitArea: {
+                    show: true
+                }
+            },
+            yAxis: {
+                type: 'category',
+                data: {{ y1|safe }},
+                splitArea: {
+                    show: true
+                }
+            },
+            visualMap: {
+                min: 0,
+                max: 10,
+                calculable: true,
+                orient: 'horizontal',
+                left: 'center',
+                bottom: '15%'
+            },
+            series: [
+                {
+                    name: 'Punch Card',
+                    type: 'heatmap',
+                    data: {{ data4|safe }},
+                    label: {
+                        show: true
+                    },
+                    emphasis: {
+                        itemStyle: {
+                            shadowBlur: 10,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }
+            ]
+        };
+        chart4.setOption(option4);
+
+    }
+
+    drawCharts()
+</script>
+</body>
+</html>

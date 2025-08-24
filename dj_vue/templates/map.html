@@ -1,0 +1,326 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识图谱</title>
+
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="../static/images/logo.jpg">
+    <!--Nifty Stylesheet [ REQUIRED ]-->
+    <link href="../static/css/nifty.min.css" rel="stylesheet">
+
+
+    <!--Nifty Premium Icon [ DEMONSTRATION ]-->
+    <link href="../static/css/nifty-demo-icons.min.css" rel="stylesheet">
+
+
+    <!--Demo [ DEMONSTRATION ]-->
+    <link href="../static/css/nifty-demo-icons.min.css" rel="stylesheet">
+    <link href="../static/css/nifty-demo.min.css" rel="stylesheet">
+    <link href="../static/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="dns-prefetch" href="https://webapi.amap.com">
+    <link rel="dns-prefetch" href="https://restapi.amap.com">
+    <link rel="dns-prefetch" href="https://vdata.amap.com">
+    <link rel="dns-prefetch" href="https://vdata01.amap.com">
+    <link rel="dns-prefetch" href="https://vdata02.amap.com">
+    <link rel="dns-prefetch" href="https://vdata03.amap.com">
+    <link rel="dns-prefetch" href="https://vdata04.amap.com">
+    <link rel="dns-prefetch" href="https://sdf.amap.com">
+    <link rel="dns-prefetch" href="https://wprd01.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://wprd02.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://wprd03.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://wprd04.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://webst01.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://webst02.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://webst03.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://webst04.is.autonavi.com">
+
+    <!--JAVASCRIPT-->
+    <!--=================================================-->
+
+    <!--Pace - Page Load Progress Par [OPTIONAL]-->
+    <link href="../static/css/pace.min.css" rel="stylesheet">
+
+    <script src="../static/js/pace.min.js"></script>
+
+
+    <!--jQuery [ REQUIRED ]-->
+    <script src="../static/js/jquery-2.2.4.min.js"></script>
+
+
+    <!--BootstrapJS [ RECOMMENDED ]-->
+    <script src="../static/js/bootstrap.min.js"></script>
+
+
+    <!--NiftyJS [ RECOMMENDED ]-->
+    <script src="../static/js/nifty.min.js"></script>
+    <script src="../static/js/icons.js"></script>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=e81b28fef55ad03d22897d93fef5a420&plugin=AMap.Scale,AMap.ToolBar,AMap.CustomLayer"></script>
+    <!-- 引入最新版的 echarts CDN -->
+    <script type="text/javascript" src="../static/js/echarts.min.js"></script>
+    <!-- 引入最新版的 echarts-extension-amap 高德地图扩展库 CDN -->
+    <script type="text/javascript" src="../static/js/echarts-extension-amap.min.js"></script>
+    <script src="../static/js/nifty-demo.min.js"></script>
+    <style type="text/css">
+        #tagsList {
+            position: relative;
+            width: 250px;
+            height: 250px;
+        }
+
+        #tagsList a {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-family: Microsoft YaHei;
+            color: gray;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 3px 6px;
+        }
+
+        #tagsList a:hover {
+            color: #249e92;
+            letter-spacing: 2px;
+        }
+
+        #search:focus {
+            border: 1px solid #249e92;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div id="container" class="effect aside-float aside-bright mainnav-lg">
+    <header id="navbar">
+        <div id="navbar-container" class="boxed">
+
+            <div class="navbar-header">
+                <a href="" class="navbar-brand">
+                    <img src="../static/images/logo.jpg" alt="Nifty Logo" class="brand-icon">
+                    <div class="brand-title">
+                        <span class="brand-text"></span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="navbar-content clearfix">
+                <ul class="nav navbar-top-links pull-left">
+                    <li class="tgl-menu-btn">
+                        <a class="mainnav-toggle" href="#">
+                            <i class="demo-pli-view-list"></i>
+                        </a>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-top-links pull-left">
+
+                    <h4>知识图谱</h4>
+
+
+                </ul>
+            </div>
+
+        </div>
+    </header>
+    <div class="boxed">
+        <div id="content-container">
+            <div id="page-content">
+                <h4 class="text-main pad-btm bord-btm">地图可视化</h4>
+                <div id="echarts-amap" style="width: 100%;height: 800px"></div>
+            </div>
+            <!--===================================================-->
+            <!--End page content-->
+
+
+        </div>
+        <!--===================================================-->
+        <!--END CONTENT CONTAINER-->
+
+
+        <!--MAIN NAVIGATION-->
+        <!--===================================================-->
+        <nav id="mainnav-container">
+            <div id="mainnav">
+
+                <!--Menu-->
+                <!--================================-->
+                <div id="mainnav-menu-wrap">
+                    <div class="nano">
+                        <div class="nano-content">
+
+                            <ul id="mainnav-menu" class="list-group">
+
+                                <li>
+                                    <a href="search">
+                                        <i class="fa fa-search" style="width:24px"></i>
+                                        <span class="menu-title">
+                                                <strong>检索</strong>
+                                            </span>
+
+                                    </a>
+
+
+                                </li>
+                                <li>
+                                    <a href="get_all_relation">
+                                        <i class="fa fa-pie-chart" style="width:24px"></i>
+                                        <span class="menu-title">
+                                                <strong>知识图谱</strong>
+                                            </span>
+
+                                    </a>
+
+                                </li>
+                                <!--Menu list item-->
+                                <li>
+                                    <a href="maps">
+                                        <i class="fa fa-question-circle" style="width:24px"></i>
+                                        <span class="menu-title">地图</span>
+
+                                    </a>
+                                    <a href="plot_scores">
+                                        <i class="fa fa-question-circle" style="width:24px"></i>
+                                        <span class="menu-title">统计</span>
+
+                                    </a>
+
+                                </li>
+
+
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!--================================-->
+                <!--End menu-->
+
+            </div>
+        </nav>
+        <!--===================================================-->
+        <!--END MAIN NAVIGATION-->
+
+    </div>
+
+    <!-- FOOTER -->
+    <!--===================================================-->
+    <footer id="footer">
+
+        <p class="pad-lft">Copyright&#0169; 2022 &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;All Rights Reserved </p>
+
+    </footer>
+    <!--===================================================-->
+    <!-- END FOOTER -->
+
+    <!-- SCROLL PAGE BUTTON -->
+    <!--===================================================-->
+    <button class="scroll-top btn">
+        <i class="pci-chevron chevron-up"></i>
+    </button>
+    <!--===================================================-->
+</div>
+<!--===================================================-->
+<!-- END OF CONTAINER -->
+<script type="text/javascript">
+    var data =
+    {{ data|safe }}
+
+    var geoCoordMap =
+    {{ geoCoordMap |safe }}
+
+    var convertData = function (data) {
+        var res = [];
+        for (var i = 0; i < data.length; i++) {
+            var geoCoord = geoCoordMap[data[i].name];
+            if (geoCoord) {
+                res.push({
+                    name: data[i].name,
+                    value: geoCoord.concat(data[i].value)
+                });
+            }
+        }
+        return res;
+    };
+    // ECharts Option配置
+    var option = {
+        // 加载 amap 组件
+        amap: {
+            // 高德地图中心经纬度
+            center: [120.61, 31.31],
+            // 高德地图缩放
+            zoom: 50,
+            // 启用resize
+            resizeEnable: true,
+            // 移动过程中实时渲染 默认为true 如数据量较大 建议置为false
+            renderOnMoving: true,
+            // 自定义地图样式主题
+            mapStyle: 'amap://styles/dark'
+            // 说明：如果想要添加卫星、路网等图层
+            // 暂时先不要使用layers配置，因为存在Bug
+            // 建议使用amap.add的方式，使用方式参见最下方代码
+
+            // 其他高德地图支持的初始配置项都可以在这里配置
+        },
+        tooltip: {
+            trigger: 'item'
+        },
+        animation: true,
+        series: [
+            {
+                name: '位置',
+                type: 'effectScatter',
+                coordinateSystem: 'amap',
+                data: convertData(data),
+                symbolSize: function (val) {
+                    return val[2] / 10;
+                },
+                encode: {
+                    value: 2
+                },
+                showEffectOn: 'render',
+                rippleEffect: {
+                    brushType: 'stroke'
+                },
+                hoverAnimation: true,
+                label: {
+                    normal: {
+                        formatter: '{b}',
+                        position: 'right',
+                        show: true
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#fff',
+                        shadowBlur: 10,
+                        shadowColor: '#333'
+                    }
+                },
+                zlevel: 1
+            }
+        ]
+    };
+    // 初始化ECharts
+    var chart = echarts.init(document.getElementById('echarts-amap'));
+    chart.setOption(option);
+    // 从ECharts实例中取到高德地图组件实例
+    var amap = chart.getModel().getComponent('amap').getAMap();
+    // 下边就可以按照高德官方API随意调用了
+    // 比如添加一些控件
+    {#amap.addControl(new AMap.Scale());#}
+    {#amap.addControl(new AMap.ToolBar());#}
+    {#// 添加一些图层 卫星图层/交通路网等等#}
+    {#var satelliteLayer = new AMap.TileLayer.Satellite();#}
+    {#var roadNetLayer = new AMap.TileLayer.RoadNet();#}
+    {#amap.add([satelliteLayer, roadNetLayer]);#}
+</script>
+</body>
+</html>

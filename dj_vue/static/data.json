@@ -1,0 +1,676 @@
+{
+  "data": [
+    {
+      "name": "下菰城遗址",
+      "category": 3
+    },
+    {
+      "name": "书院与学校",
+      "category": 7
+    },
+    {
+      "name": "二泉映月",
+      "category": 3
+    },
+    {
+      "name": "交通枢纽",
+      "category": 0
+    },
+    {
+      "name": "仙顶寺",
+      "category": 3
+    },
+    {
+      "name": "佛教寺庙",
+      "category": 2
+    },
+    {
+      "name": "公园与广场",
+      "category": 1
+    },
+    {
+      "name": "公园与绿地",
+      "category": 4
+    },
+    {
+      "name": "其他宗教场所",
+      "category": 5
+    },
+    {
+      "name": "北仓门",
+      "category": 3
+    },
+    {
+      "name": "南浔古镇",
+      "category": 3
+    },
+    {
+      "name": "南禅寺",
+      "category": 3
+    },
+    {
+      "name": "南长街",
+      "category": 3
+    },
+    {
+      "name": "南门兜",
+      "category": 3
+    },
+    {
+      "name": "历史逮址",
+      "category": 2
+    },
+    {
+      "name": "双林古镇",
+      "category": 3
+    },
+    {
+      "name": "古镇与古街区",
+      "category": 4
+    },
+    {
+      "name": "名人故居",
+      "category": 2
+    },
+    {
+      "name": "善琏镇",
+      "category": 3
+    },
+    {
+      "name": "园林与庭院",
+      "category": 1
+    },
+    {
+      "name": "城中公园",
+      "category": 3
+    },
+    {
+      "name": "安吉大竹海",
+      "category": 3
+    },
+    {
+      "name": "安吉天荒坪",
+      "category": 3
+    },
+    {
+      "name": "寄畅园",
+      "category": 3
+    },
+    {
+      "name": "崇安寺",
+      "category": 3
+    },
+    {
+      "name": "崇福寺",
+      "category": 3
+    },
+    {
+      "name": "工业旧址",
+      "category": 6
+    },
+    {
+      "name": "惠山寺",
+      "category": 3
+    },
+    {
+      "name": "扬名",
+      "category": 3
+    },
+    {
+      "name": "文化古迹",
+      "category": 2
+    },
+    {
+      "name": "无锡县学旧址",
+      "category": 3
+    },
+    {
+      "name": "无锡老城墙遗址",
+      "category": 3
+    },
+    {
+      "name": "桥梁",
+      "category": 8
+    },
+    {
+      "name": "梅里",
+      "category": 3
+    },
+    {
+      "name": "清名桥历史街区",
+      "category": 3
+    },
+    {
+      "name": "湖州东林书院",
+      "category": 3
+    },
+    {
+      "name": "湖州华严寺",
+      "category": 3
+    },
+    {
+      "name": "湖州城隍庙",
+      "category": 3
+    },
+    {
+      "name": "湖州天主教堂",
+      "category": 3
+    },
+    {
+      "name": "湖州月河古街",
+      "category": 3
+    },
+    {
+      "name": "湖州沈括墓",
+      "category": 3
+    },
+    {
+      "name": "湖州法华塔",
+      "category": 3
+    },
+    {
+      "name": "湖州潘公桥",
+      "category": 3
+    },
+    {
+      "name": "湖州潮音桥",
+      "category": 3
+    },
+    {
+      "name": "湖州红砖厂遗址",
+      "category": 3
+    },
+    {
+      "name": "湖州织造博物馆",
+      "category": 3
+    },
+    {
+      "name": "湖州老火车站",
+      "category": 3
+    },
+    {
+      "name": "湖州老码头",
+      "category": 3
+    },
+    {
+      "name": "湖州赵孟頫故居",
+      "category": 3
+    },
+    {
+      "name": "湖州通济桥",
+      "category": 3
+    },
+    {
+      "name": "湖州铁佛寺",
+      "category": 3
+    },
+    {
+      "name": "特色建筑",
+      "category": 8
+    },
+    {
+      "name": "甘露寺",
+      "category": 3
+    },
+    {
+      "name": "自然风景区",
+      "category": 4
+    },
+    {
+      "name": "莫干山",
+      "category": 3
+    },
+    {
+      "name": "获港古镇",
+      "category": 3
+    },
+    {
+      "name": "菱湖古镇",
+      "category": 3
+    },
+    {
+      "name": "萎湖丝厂旧址",
+      "category": 3
+    },
+    {
+      "name": "薛福成故居",
+      "category": 3
+    },
+    {
+      "name": "街道与巷弄",
+      "category": 0
+    },
+    {
+      "name": "运河公园",
+      "category": 3
+    },
+    {
+      "name": "金愿",
+      "category": 3
+    },
+    {
+      "name": "金盖山",
+      "category": 3
+    },
+    {
+      "name": "钱钟书故居",
+      "category": 3
+    },
+    {
+      "name": "长兴金钉子地质遗迹",
+      "category": 3
+    },
+    {
+      "name": "长兴顾渚山",
+      "category": 3
+    },
+    {
+      "name": "长广溪湿地公园",
+      "category": 3
+    },
+    {
+      "name": "风景",
+      "category": 9
+    },
+    {
+      "name": "香溪",
+      "category": 3
+    }
+  ],
+  "links": [
+    {
+      "source": 16,
+      "target": 30,
+      "value": "相关地址"
+    },
+    {
+      "source": 16,
+      "target": 34,
+      "value": "相关地址"
+    },
+    {
+      "source": 16,
+      "target": 56,
+      "value": "相关地址"
+    },
+    {
+      "source": 16,
+      "target": 15,
+      "value": "相关地址"
+    },
+    {
+      "source": 16,
+      "target": 10,
+      "value": "相关地址"
+    },
+    {
+      "source": 16,
+      "target": 55,
+      "value": "相关地址"
+    },
+    {
+      "source": 16,
+      "target": 39,
+      "value": "相关地址"
+    },
+    {
+      "source": 53,
+      "target": 54,
+      "value": "相关地址"
+    },
+    {
+      "source": 53,
+      "target": 65,
+      "value": "相关地址"
+    },
+    {
+      "source": 53,
+      "target": 21,
+      "value": "相关地址"
+    },
+    {
+      "source": 53,
+      "target": 68,
+      "value": "相关地址"
+    },
+    {
+      "source": 53,
+      "target": 62,
+      "value": "相关地址"
+    },
+    {
+      "source": 7,
+      "target": 20,
+      "value": "相关地址"
+    },
+    {
+      "source": 7,
+      "target": 66,
+      "value": "相关地址"
+    },
+    {
+      "source": 7,
+      "target": 22,
+      "value": "相关地址"
+    },
+    {
+      "source": 14,
+      "target": 31,
+      "value": "相关地址"
+    },
+    {
+      "source": 14,
+      "target": 0,
+      "value": "相关地址"
+    },
+    {
+      "source": 14,
+      "target": 64,
+      "value": "相关地址"
+    },
+    {
+      "source": 29,
+      "target": 27,
+      "value": "相关地址"
+    },
+    {
+      "source": 29,
+      "target": 11,
+      "value": "相关地址"
+    },
+    {
+      "source": 29,
+      "target": 25,
+      "value": "相关地址"
+    },
+    {
+      "source": 29,
+      "target": 4,
+      "value": "相关地址"
+    },
+    {
+      "source": 29,
+      "target": 37,
+      "value": "相关地址"
+    },
+    {
+      "source": 29,
+      "target": 50,
+      "value": "相关地址"
+    },
+    {
+      "source": 29,
+      "target": 41,
+      "value": "相关地址"
+    },
+    {
+      "source": 17,
+      "target": 58,
+      "value": "相关地址"
+    },
+    {
+      "source": 17,
+      "target": 63,
+      "value": "相关地址"
+    },
+    {
+      "source": 17,
+      "target": 48,
+      "value": "相关地址"
+    },
+    {
+      "source": 5,
+      "target": 27,
+      "value": "相关地址"
+    },
+    {
+      "source": 5,
+      "target": 25,
+      "value": "相关地址"
+    },
+    {
+      "source": 5,
+      "target": 18,
+      "value": "相关地址"
+    },
+    {
+      "source": 8,
+      "target": 38,
+      "value": "相关地址"
+    },
+    {
+      "source": 19,
+      "target": 23,
+      "value": "相关地址"
+    },
+    {
+      "source": 19,
+      "target": 52,
+      "value": "相关地址"
+    },
+    {
+      "source": 19,
+      "target": 2,
+      "value": "相关地址"
+    },
+    {
+      "source": 6,
+      "target": 60,
+      "value": "相关地址"
+    },
+    {
+      "source": 6,
+      "target": 24,
+      "value": "相关地址"
+    },
+    {
+      "source": 6,
+      "target": 20,
+      "value": "相关地址"
+    },
+    {
+      "source": 59,
+      "target": 61,
+      "value": "相关地址"
+    },
+    {
+      "source": 59,
+      "target": 28,
+      "value": "相关地址"
+    },
+    {
+      "source": 59,
+      "target": 33,
+      "value": "相关地址"
+    },
+    {
+      "source": 59,
+      "target": 9,
+      "value": "相关地址"
+    },
+    {
+      "source": 59,
+      "target": 12,
+      "value": "相关地址"
+    },
+    {
+      "source": 59,
+      "target": 13,
+      "value": "相关地址"
+    },
+    {
+      "source": 3,
+      "target": 46,
+      "value": "相关地址"
+    },
+    {
+      "source": 3,
+      "target": 47,
+      "value": "相关地址"
+    },
+    {
+      "source": 26,
+      "target": 57,
+      "value": "相关地址"
+    },
+    {
+      "source": 26,
+      "target": 45,
+      "value": "相关地址"
+    },
+    {
+      "source": 26,
+      "target": 44,
+      "value": "相关地址"
+    },
+    {
+      "source": 1,
+      "target": 35,
+      "value": "相关地址"
+    },
+    {
+      "source": 32,
+      "target": 43,
+      "value": "相关地址"
+    },
+    {
+      "source": 32,
+      "target": 49,
+      "value": "相关地址"
+    },
+    {
+      "source": 32,
+      "target": 42,
+      "value": "相关地址"
+    },
+    {
+      "source": 51,
+      "target": 40,
+      "value": "相关地址"
+    },
+    {
+      "source": 51,
+      "target": 36,
+      "value": "相关地址"
+    },
+    {
+      "source": 67,
+      "target": 16,
+      "value": "分类"
+    },
+    {
+      "source": 67,
+      "target": 53,
+      "value": "分类"
+    },
+    {
+      "source": 67,
+      "target": 7,
+      "value": "分类"
+    },
+    {
+      "source": 67,
+      "target": 14,
+      "value": "分类"
+    },
+    {
+      "source": 67,
+      "target": 29,
+      "value": "分类"
+    },
+    {
+      "source": 67,
+      "target": 5,
+      "value": "分类"
+    },
+    {
+      "source": 67,
+      "target": 8,
+      "value": "分类"
+    },
+    {
+      "source": 67,
+      "target": 19,
+      "value": "分类"
+    },
+    {
+      "source": 67,
+      "target": 6,
+      "value": "分类"
+    },
+    {
+      "source": 67,
+      "target": 59,
+      "value": "分类"
+    },
+    {
+      "source": 67,
+      "target": 3,
+      "value": "分类"
+    },
+    {
+      "source": 67,
+      "target": 26,
+      "value": "分类"
+    },
+    {
+      "source": 67,
+      "target": 1,
+      "value": "分类"
+    },
+    {
+      "source": 67,
+      "target": 32,
+      "value": "分类"
+    },
+    {
+      "source": 67,
+      "target": 51,
+      "value": "分类"
+    }
+  ],
+  "name": [
+    "交通与设施",
+    "休闲与娱乐",
+    "历史与文化价值",
+    "地址",
+    "地理类型",
+    "宗教与信仰",
+    "工业与遗址",
+    "教育与学术",
+    "桥梁与建筑",
+    "风景"
+  ],
+  "categories": [
+    {
+      "name": "交通与设施"
+    },
+    {
+      "name": "休闲与娱乐"
+    },
+    {
+      "name": "历史与文化价值"
+    },
+    {
+      "name": "地址"
+    },
+    {
+      "name": "地理类型"
+    },
+    {
+      "name": "宗教与信仰"
+    },
+    {
+      "name": "工业与遗址"
+    },
+    {
+      "name": "教育与学术"
+    },
+    {
+      "name": "桥梁与建筑"
+    },
+    {
+      "name": "风景"
+    }
+  ]
+}

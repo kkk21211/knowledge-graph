@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- 下边这些dns-prefetch 是为了实现DNS预解析的 -->
+    <link rel="dns-prefetch" href="https://webapi.amap.com">
+    <link rel="dns-prefetch" href="https://restapi.amap.com">
+    <link rel="dns-prefetch" href="https://vdata.amap.com">
+    <link rel="dns-prefetch" href="https://vdata01.amap.com">
+    <link rel="dns-prefetch" href="https://vdata02.amap.com">
+    <link rel="dns-prefetch" href="https://vdata03.amap.com">
+    <link rel="dns-prefetch" href="https://vdata04.amap.com">
+    <link rel="dns-prefetch" href="https://sdf.amap.com">
+    <link rel="dns-prefetch" href="https://wprd01.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://wprd02.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://wprd03.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://wprd04.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://webst01.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://webst02.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://webst03.is.autonavi.com">
+    <link rel="dns-prefetch" href="https://webst04.is.autonavi.com">
+    <title>高德地图结合ECharts测试</title>
+    <!-- 替换自己的key并设置要引入的插件，如果你用的版本是2.0, 可以把v=1.4.15改为v=2.0 -->
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=e81b28fef55ad03d22897d93fef5a420&plugin=AMap.Scale,AMap.ToolBar,AMap.CustomLayer"></script>
+    <!-- 引入最新版的 echarts CDN -->
+    <script type="text/javascript" src="../static/js/echarts.min.js"></script>
+    <!-- 引入最新版的 echarts-extension-amap 高德地图扩展库 CDN -->
+    <script type="text/javascript" src="../static/js/echarts-extension-amap.min.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body, #echarts-amap {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="echarts-amap"></div>
+    <!-- 数据来源于百度地图 仅作示例 与高德坐标稍有偏差 -->
+    <script type="text/javascript">
+        var data = {{ data|safe }}
+
+        var geoCoordMap ={{ geoCoordMap |safe }}
+
+        var convertData = function (data) {
+            var res = [];
+            for (var i = 0; i < data.length; i++) {
+                var geoCoord = geoCoordMap[data[i].name];
+                if (geoCoord) {
+                    res.push({
+                        name: data[i].name,
+                        value: geoCoord.concat(data[i].value)
+                    });
+                }
+            }
+            return res;
+        };
+        // ECharts Option配置
+        var option = {
+            // 加载 amap 组件
+            amap: {
+                // 高德地图中心经纬度
+                center: [120.61, 31.31],
+                // 高德地图缩放
+                zoom: 50,
+                // 启用resize
+                resizeEnable: true,
+                // 移动过程中实时渲染 默认为true 如数据量较大 建议置为false
+                renderOnMoving: true,
+                // 自定义地图样式主题
+                mapStyle:'amap://styles/dark'
+                // 说明：如果想要添加卫星、路网等图层
+                // 暂时先不要使用layers配置，因为存在Bug
+                // 建议使用amap.add的方式，使用方式参见最下方代码
+
+                // 其他高德地图支持的初始配置项都可以在这里配置
+            },
+            tooltip: {
+                trigger: 'item'
+            },
+            animation: true,
+            series: [
+                {
+                    name: '位置',
+                    type: 'effectScatter',
+                    coordinateSystem: 'amap',
+                    data: convertData(data),
+                    symbolSize: function (val) {
+                        return val[2] / 10;
+                    },
+                    encode: {
+                      value: 2
+                    },
+                    showEffectOn: 'render',
+                    rippleEffect: {
+                        brushType: 'stroke'
+                    },
+                    hoverAnimation: true,
+                    label: {
+                        normal: {
+                            formatter: '{b}',
+                            position: 'right',
+                            show: true
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: '#fff',
+                            shadowBlur: 10,
+                            shadowColor: '#333'
+                        }
+                    },
+                    zlevel: 1
+                }
+            ]
+        };
+        // 初始化ECharts
+        var chart = echarts.init(document.getElementById('echarts-amap'));
+        chart.setOption(option);
+        // 从ECharts实例中取到高德地图组件实例
+        var amap = chart.getModel().getComponent('amap').getAMap();
+        // 下边就可以按照高德官方API随意调用了
+        // 比如添加一些控件
+        {#amap.addControl(new AMap.Scale());#}
+        {#amap.addControl(new AMap.ToolBar());#}
+        {#// 添加一些图层 卫星图层/交通路网等等#}
+        {#var satelliteLayer = new AMap.TileLayer.Satellite();#}
+        {#var roadNetLayer = new AMap.TileLayer.RoadNet();#}
+        {#amap.add([satelliteLayer, roadNetLayer]);#}
+    </script>
+</body>
+</html>
